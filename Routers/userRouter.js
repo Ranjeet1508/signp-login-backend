@@ -8,7 +8,7 @@ require('dotenv').config();
 
 userRouter.post('/signup', async(req,res) => {
     try {
-        const{name, email, password} = req.body;
+        const{name,email, password} = req.body;
         let user = await UserModel.findOne({'email':email});
         if(user){
             return res.status(409).json({
